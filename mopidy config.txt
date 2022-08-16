@@ -1,0 +1,68 @@
+[local]
+enabled = true
+
+[audio]
+mixer = software
+mixer_volume = 10
+output = alsasink
+buffer_time = 300
+
+[http]
+enabled = true
+hostname = ::
+port = 6680
+zeroconf = Mopidy HTTP server on $hostname
+allowed_origins =
+csrf_protection = true
+default_app = musicbox_webclient
+
+[mpd]
+hostname = ::
+
+[stream]
+enabled = true
+protocols =
+    http
+    https
+    mms
+    rtmp
+    rtmps
+    rtsp
+timeout = 1001
+metadata_blacklist = http://stream.srg-ssr.ch/*
+
+[raspberry-gpio]
+enabled = true
+bcm5 = play_pause,active_low,250
+bcm17 = prev,active_low,250
+bcm22 = next,active_low,250
+bcm13 = volume_down,active_low,10,rotenc_id=vol,step=5
+bcm6 = volume_up,active_low,10,rotenc_id=vol,step=5
+
+[file]
+enabled = true
+media_dirs =
+    /home/pi/Music
+    ~/|Home
+show_dotfiles = false
+excluded_file_extensions =
+  .directory
+  .html
+  .jpeg
+  .jpg
+  .log
+  .nfo
+  .pdf
+  .png
+  .txt
+  .zip
+follow_symlinks = false
+metadata_timeout = 1000
+
+[alsamixer]
+enabled = false
+card = 0
+control = Master
+min_volume = 0
+max_volume = 100
+volume_scale = cubic
