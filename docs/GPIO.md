@@ -12,9 +12,9 @@ PIN 02 - 5V
 PIN 06 - GND
 
 # Rotary Encoder:
-PIN 33 - CLK   GPIO 13
-PIN 31 - DT    GPIO 6
-PIN 29 - SW    GPIO 5
+PIN 33 - CLK   GPIO 23
+PIN 31 - DT    GPIO 22
+PIN 29 - SW    GPIO 21
 PIN 02 - 5V
 PIN 06 - GND
 

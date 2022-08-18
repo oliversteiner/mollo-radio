@@ -337,3 +337,21 @@ update
 urlhandlers
 volume
 
+
+## PGIO
+
+### Remote PGIO
+sudo raspi-config -> Interfaces -> Remote GPIO
+
+für Remote PGIO den user root zur gruppe hinzufügen
+sudo adduser root gpio
+
+#### Service dauerhaft starten 
+sudo systemctl enable pigpiod
+sudo systemctl start pigpiod
+
+#### Controlhost
+sudo systemctl stop pigpiod.service
+sudo killall pigpiod
+sudo pigpiod -n 10.0.1.97
+sudo systemctl start pigpiod.service
