@@ -33,6 +33,9 @@ class Radio:
         status = client.status()
         vol = status.get('volume')
         print('Volume: ' + vol)
+        state = status.get('state')
+        if state == "play":
+            self.playing = True
 
     def clear_and_load_playlist(self):
         # Clears the current playlist
