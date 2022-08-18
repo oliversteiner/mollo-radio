@@ -1,0 +1,26 @@
+[
+  {
+    "name": "DRS1",
+    "url": "http://stream.srg-ssr.ch/drs1/mp3_128.m3u",
+    "title": "DRS Regio Solothurn",
+    "logo": "/assets/logos/drs1.png"
+  },
+  {
+    "name": "MuWe",
+    "url": "http://stream.srg-ssr.ch/drsmw/mp3_128.m3u",
+    "title": "Musikwelle",
+    "logo": "/assets/logos/muwe.png"
+  },
+  {
+    "name": "SWR4",
+    "url": "https://dispatcher.rndfnk.com/swr/swr4/bw/mp3/128/stream.mp3",
+    "title": "Südwestrundfunk",
+    "logo": "/assets/logos/swr4.png"
+  },
+  {
+    "name": "KanK",
+    "url": "https://stream2.kanalk.ch/kanalk.mp3",
+    "title": "Kanal K",
+    "logo": "/assets/logos/kank.png"
+  }
+]
