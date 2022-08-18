@@ -9,7 +9,7 @@ sudo raspi-config
 - SSH einschalten
 - Audio-Card wählen
 - I2C einschalten
-- Remote GPIO einschalten
+- ~~Remote GPIO einschalten~~ (problems with audio)
 - Root partition ausweiten
 - 
 
@@ -65,26 +65,8 @@ sudo python3 -m pip install Mopidy-Muse
 sudo python3 -m pip install Mopidy-ORFRadio
 
 sudo python3 -m pip install mopidy-alsamixer
-
 ```
 
-
-### UPNP (rygel)
-
-
-```sh
-sudo apt install rygel -y
-sudo nano /etc/rygel.conf
-# Suche nach **[MPRIS]** und editiere den Eintrag **enabled=false** zu **enabled=true**.
-
-
-#/home/NUTZERNAME/.config/rygel.conf
-```
-Neue Config anlegen:
-``nano /home/ost/.config/rygel.conf
-
-Rygel testen:
-``rygel
 
 ## Airplay  (Sharepoint)
 ```sh

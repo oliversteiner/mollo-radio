@@ -98,6 +98,22 @@ class Radio:
 
         pass
 
+    def volume(self):
+        print("Current Volume")
+        status = self.client.status()
+        vol = int(status.get('volume'))
+        return vol
+
+    def set_volume(self, vol):
+        print("Set Volume")
+        if 99 > vol > 0:
+            self.client.setvol(vol)
+            print('Volume: %i ' % vol)
+        else:
+            print('Max Volume')
+
+        pass
+
     def show_info(self):
         print("----- Info -----")
         for entry in self.client.lsinfo("/"):
