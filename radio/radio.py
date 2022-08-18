@@ -26,7 +26,7 @@ class Radio:
         self.client.setvol(10)
 
         # load_radio_stations()
-        # self.clear_and_load_playlist()
+        self.clear_and_load_playlist()
         commands = client.commands()
         print(commands)
 
@@ -42,7 +42,7 @@ class Radio:
         self.client.clear()
 
         # load stored playlist 'radio' in current playlist
-        self.client.load('radio')
+        self.client.load('Radio')
 
         # list of songs in current playlist
         playlist = self.client.playlist()
@@ -95,6 +95,22 @@ class Radio:
             print('Volume: %i > %i' % (vol, new_vol))
         else:
             print("Min Volume")
+
+        pass
+
+    def volume(self):
+        print("Current Volume")
+        status = self.client.status()
+        vol = int(status.get('volume'))
+        return vol
+
+    def set_volume(self, vol):
+        print("Set Volume")
+        if 99 > vol > 0:
+            self.client.setvol(vol)
+            print('Volume: %i ' % vol)
+        else:
+            print('Max Volume')
 
         pass
 

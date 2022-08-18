@@ -2,7 +2,7 @@
 # $ GPIOZERO_PIN_FACTORY=pigpio PIGPIO_ADDR=10.0.1.99 python3 remote_gpio.py
 
 from gpiozero import Button
-# from gpiozero import RotaryEncoder
+from gpiozero import RotaryEncoder
 
 from signal import pause
 
@@ -42,12 +42,12 @@ def play_song_3():
 
 def change_volume():
     print('rotate')
-  #  print(rotor.steps)
+    print(rotor.steps)
 
 
 # Rotary Encoder:
-#rotor = RotaryEncoder(6, 13, wrap=True, max_steps=150)
-#rotor.steps = 10
+rotor = RotaryEncoder(6, 13, wrap=True, max_steps=150)
+rotor.steps = 10
 
 button1 = Button(23)  # DRS 1
 button2 = Button(16)  # MW
@@ -56,7 +56,7 @@ button3 = Button(5)  # Play / Pause
 print('remote test 2')
 print('---------------')
 
-#rotor.when_rotated = change_volume
+rotor.when_rotated = change_volume
 button1.when_pressed = play_song_1
 button2.when_pressed = play_song_2
 button3.when_pressed = play_song_3
