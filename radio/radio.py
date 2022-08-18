@@ -26,7 +26,7 @@ class Radio:
         self.client.setvol(10)
 
         # load_radio_stations()
-        # self.clear_and_load_playlist()
+        self.clear_and_load_playlist()
         commands = client.commands()
         print(commands)
 
@@ -42,7 +42,7 @@ class Radio:
         self.client.clear()
 
         # load stored playlist 'radio' in current playlist
-        self.client.load('radio')
+        self.client.load('Radio')
 
         # list of songs in current playlist
         playlist = self.client.playlist()
