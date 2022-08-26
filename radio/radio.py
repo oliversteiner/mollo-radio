@@ -1,5 +1,6 @@
 import json
 import mpd
+from . import display_oled
 
 
 def load_radio_stations():
@@ -27,8 +28,9 @@ class Radio:
 
         # load_radio_stations()
         self.clear_and_load_playlist()
-        commands = client.commands()
-        print(commands)
+
+        # commands = client.commands()
+        # print(commands)
 
         status = client.status()
         vol = status.get('volume')
@@ -55,6 +57,14 @@ class Radio:
         index = int(station_nr) - 1
         self.client.play(index)
         self.playing = True
+        if station_nr == 1:
+            text = "Kana K"
+        elif station_nr == 2:
+            text = "DRS 1"
+        else:
+            text = "Unbekannt"
+        display_oled.show(text, self.volume())
+
         pass
 
     def play_pause(self):
@@ -62,10 +72,12 @@ class Radio:
             print("paused")
             self.client.pause()
             self.playing = False
+            display_oled.show('Pause', self.volume())
         else:
             print("playing")
             self.client.play()
             self.playing = True
+            display_oled.show('Play', self.volume())
         return self.playing
 
     def stop(self):
@@ -112,6 +124,7 @@ class Radio:
         else:
             print('Max Volume')
 
+        display_oled.show('Volume', int(vol))
         pass
 
     def show_info(self):
